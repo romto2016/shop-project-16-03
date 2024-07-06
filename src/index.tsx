@@ -55,22 +55,29 @@ import ReactDOM from 'react-dom/client'
 
 // =========================================================
 type HeaderProps = {
-    text: string
+    text?: string
+    leftpart: string
+    rightpart: string
+    order?: number
 }
 
 const Header = (props: HeaderProps) => {
-console.log(props);
-return <h1>Hello {props.text} Component</h1>
+    console.log(props)
+    return (
+        <h1>
+            {props.order} {props.leftpart} {props.text} {props.rightpart}
+        </h1>
+    )
 }
 // const TitleApp = () => <h1>Hello App Component</h1>
 // const TitleReact = () => <h1>Hello React Component</h1>
 const App = () => {
     return (
         <>
-            <Header text="Title" />
-            <Header text="App" />
-            <Header text="React" />
-            <Title />
+            <Header order={1} text="Title" leftpart="Hello" rightpart="Test" />
+            <Header text="App" leftpart="Hi" rightpart="Bla-Bla" />
+            <Header text="React" leftpart="Bye-Bye" rightpart="Rainbow" />
+
             <Content />
         </>
     )
@@ -96,8 +103,6 @@ const Content = () => (
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
-        <TitleApp />
-        <TitleReact />
         <App />
     </React.StrictMode>
 )

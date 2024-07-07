@@ -1,86 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Header from "./header"
 
-// React Element
-// const h1 = React.createElement('h1', { id: 'title' }, 'Hello World')
-// const p = React.createElement('p', null, 'Blablabla')
-
-// const app = (
-//     <div>
-//         {h1}
-//         {p}
-//     </div>
-// )
-
-// const h1 = <h1 id="title">Hello World</h1>
-// const p = (
-//     <p>
-//         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi hic
-//         unde at vero error magnam, possimus illo quae perferendis. Possimus
-//         recusandae omnis saepe voluptas consequatur repudiandae repellendus, ex
-//         quod quas.
-//     </p>
-// )
-// const ul = (
-//     <ul>
-//         <li>list item 1</li>
-//         <li>list item 2</li>
-//         <li>list item 3</li>
-//     </ul>
-// )
-// const app = (
-//     <div>
-//         {h1}
-//         {p}
-//         {ul}
-//     </div>
-// )
-
-// function declaration
-// function Title() {
-//     return <h1>Hello Title Component</h1>
-// }
-// function Content() {
-//     return (
-//         <p>
-//             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-//             corporis eveniet, nam nulla deserunt atque laboriosam ipsam possimus
-//             vitae odit dolorem doloremque nemo provident numquam quia recusandae
-//             officia sit repellat.
-//         </p>
-//     )
-// }
-
-// arrow function
-
-// =========================================================
-type HeaderProps = {
-    text?: string
-    leftpart: string
-    rightpart: string
-    order?: number
-}
 type ContentType = {
     title: string
     text1: string
     text2: string
 }
-// const user = {
-//     name: "Jack",
-//     age: 10,
-// }
-// const {name, age} = user
-// console.log(name,age);
 
-const Header = ({ order, leftpart, text, rightpart }: HeaderProps) => {
-    return (
-        <h1>
-            {order} {leftpart} {text} {rightpart}
-        </h1>
-    )
-}
-// const TitleApp = () => <h1>Hello App Component</h1>
-// const TitleReact = () => <h1>Hello React Component</h1>
 const App = () => {
     return (
         <>

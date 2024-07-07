@@ -65,18 +65,17 @@ type ContentType = {
     text1: string
     text2: string
 }
-const user = {
-    name: "Jack",
-    age: 10,
-}
-const {name, age} = user
-console.log(name,age);
+// const user = {
+//     name: "Jack",
+//     age: 10,
+// }
+// const {name, age} = user
+// console.log(name,age);
 
-const Header = (props: HeaderProps) => {
-    console.log(props)
+const Header = ({ order, leftpart, text, rightpart }: HeaderProps) => {
     return (
         <h1>
-            {props.order} {props.leftpart} {props.text} {props.rightpart}
+            {order} {leftpart} {text} {rightpart}
         </h1>
     )
 }
@@ -100,11 +99,11 @@ const App = () => {
     )
 }
 
-const Content = (props: ContentType) => (
+const Content = ({ title, text1, text2 }: ContentType) => (
     <React.Fragment>
-        <h1>{props.title}</h1>
-        <p>{props.text1}</p>
-        <p>{props.text2}</p>
+        <h1>{title}</h1>
+        <p>{text1}</p>
+        <p>{text2}</p>
     </React.Fragment>
 )
 

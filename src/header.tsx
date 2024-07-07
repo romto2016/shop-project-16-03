@@ -12,3 +12,4 @@ const Header = ({ order, leftpart, text, rightpart }: HeaderProps) => {
     )
 }
 export default Header
+

@@ -1,12 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Header from "./header"
+import Content from './Content'
 
-type ContentType = {
-    title: string
-    text1: string
-    text2: string
-}
 
 const App = () => {
     return (
@@ -26,13 +22,7 @@ const App = () => {
     )
 }
 
-const Content = ({ title, text1, text2 }: ContentType) => (
-    <React.Fragment>
-        <h1>{title}</h1>
-        <p>{text1}</p>
-        <p>{text2}</p>
-    </React.Fragment>
-)
+
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(

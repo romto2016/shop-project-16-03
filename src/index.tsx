@@ -1,14 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Header from "./header"
+import Header from './header'
 import Content from './Content'
-
 
 const App = () => {
     return (
         <>
-            <Header order={1} text="Title" leftpart="Hello" rightpart="Test" />
-            <Header text="App" leftpart="Hi" rightpart="Bla-Bla" />
+            <Header order={1} text="Title" leftpart="Hello" rightpart="Test" background='aqua'/>
+            <Header text="App" leftpart="Hi" rightpart="Bla-Bla" background='green'/>
             <Header text="React" leftpart="Bye-Bye" rightpart="Rainbow" />
 
             <Content title="Content 1" text1="hello 1" text2="Hello 2" />
@@ -21,8 +20,6 @@ const App = () => {
         </>
     )
 }
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(

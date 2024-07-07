@@ -9,8 +9,8 @@ type HeaderProps = {
 const Header = ({ order, leftpart, text, rightpart, background = "purple", color="orange" }: HeaderProps) => {
     return (
         <h1 style={{
-            background: background,
-            color: color,
+            background,
+            color,
             fontSize: "30px",
             padding: "20px"
         }}>

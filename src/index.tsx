@@ -6,8 +6,21 @@ import Content from './Content'
 const App = () => {
     return (
         <>
-            <Header order={1} text="Title" leftpart="Hello" rightpart="Test" background='aqua'/>
-            <Header text="App" leftpart="Hi" rightpart="Bla-Bla" background='green'/>
+            <Header
+                order={1}
+                text="Title"
+                leftpart="Hello"
+                rightpart="Test"
+                background="aqua"
+                color="blue"
+            />
+            <Header
+                text="App"
+                leftpart="Hi"
+                rightpart="Bla-Bla"
+                background="green"
+                color="purple"
+            />
             <Header text="React" leftpart="Bye-Bye" rightpart="Rainbow" />
 
             <Content title="Content 1" text1="hello 1" text2="Hello 2" />

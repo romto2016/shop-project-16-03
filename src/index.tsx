@@ -59,13 +59,18 @@ type HeaderProps = {
     leftpart: string
     rightpart: string
     order?: number
-    text2: string
 }
 type ContentType = {
-    title:string
+    title: string
     text1: string
     text2: string
 }
+const user = {
+    name: "Jack",
+    age: 10,
+}
+const {name, age} = user
+console.log(name,age);
 
 const Header = (props: HeaderProps) => {
     console.log(props)
@@ -73,7 +78,7 @@ const Header = (props: HeaderProps) => {
         <h1>
             {props.order} {props.leftpart} {props.text} {props.rightpart}
         </h1>
-            )
+    )
 }
 // const TitleApp = () => <h1>Hello App Component</h1>
 // const TitleReact = () => <h1>Hello React Component</h1>
@@ -84,9 +89,13 @@ const App = () => {
             <Header text="App" leftpart="Hi" rightpart="Bla-Bla" />
             <Header text="React" leftpart="Bye-Bye" rightpart="Rainbow" />
 
-            <Content title='Content 1' text1='hello 1' text2='Hello 2'/>
+            <Content title="Content 1" text1="hello 1" text2="Hello 2" />
 
-        <Content title='Content 2' text1='hello 1' text2='Hello 2 bla-bla-bla'/>
+            <Content
+                title="Content 2"
+                text1="hello 1"
+                text2="Hello 2 bla-bla-bla"
+            />
         </>
     )
 }
@@ -94,12 +103,8 @@ const App = () => {
 const Content = (props: ContentType) => (
     <React.Fragment>
         <h1>{props.title}</h1>
-        <p>
-           {props.text1}
-        </p>
-        <p>
-           {props.text2}
-        </p>
+        <p>{props.text1}</p>
+        <p>{props.text2}</p>
     </React.Fragment>
 )
 

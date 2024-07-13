@@ -1,4 +1,6 @@
-import "./Header.css"
+import './Header.css'
+// import './style.scss'
+import './Header.scss'
 
 type HeaderProps = {
     text?: string
@@ -8,7 +10,14 @@ type HeaderProps = {
     background?: string
     color?: string
 }
-const Header = ({ order, leftpart, text, rightpart, background = "purple", color="orange" }: HeaderProps) => {
+const Header = ({
+    order,
+    leftpart,
+    text,
+    rightpart,
+    background = 'purple',
+    color = 'orange',
+}: HeaderProps) => {
     return (
         <h1 className="header">
             {order} {leftpart} {text} {rightpart}
@@ -16,4 +25,3 @@ const Header = ({ order, leftpart, text, rightpart, background = "purple", color
     )
 }
 export default Header
-

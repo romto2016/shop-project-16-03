@@ -7,7 +7,7 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Container } from '@mui/material'
-import logo from "../assets/logo.svg"
+import logo from '../assets/logo.svg'
 
 // tsrafce
 // import React from 'react'
@@ -16,7 +16,7 @@ type Props = {}
 
 const Header = (props: Props) => {
     return (
-        <AppBar position="static" sx={{backgroundColor: "Green"}}>
+        <AppBar position="static" sx={{ backgroundColor: 'Green' }}>
             <Container>
                 <Toolbar>
                     <IconButton
@@ -32,11 +32,13 @@ const Header = (props: Props) => {
                         variant="h6"
                         component="div"
                         sx={{ flexGrow: 1 }}
-                       
                     >
-                         <img src={logo} alt="" />
+                        <img src={logo} alt="" />
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button color="inherit">Home</Button>
+                    <Button color="inherit">Products</Button>
+                    <Button color="inherit">Payment</Button>
+                    <Button color="inherit">Cart</Button>
                 </Toolbar>
             </Container>
         </AppBar>

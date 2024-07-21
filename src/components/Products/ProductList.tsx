@@ -1,7 +1,6 @@
 import { Grid, Typography } from '@mui/material'
 import ProductListItem from './ProductListItem'
-import Box from '@mui/material/Box'
-import { CenterFocusStrong } from '@mui/icons-material'
+
 
 type Props = {}
 const ProductList = (props: Props) => {

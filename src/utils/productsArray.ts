@@ -1,4 +1,3 @@
-import { Description } from "@mui/icons-material";
 
 type Product = {
     title: string

@@ -6,14 +6,15 @@ type Props = {
     type: string
     capacity: string
     price: number
-}
+   }
 
 const ProductListItem = ({
     title,
     description,
     capacity,
     price,
-    type,
+    type
+    
 }: Props) => {
     return (
         <Card variant="outlined" className="product-list-item">

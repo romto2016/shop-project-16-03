@@ -1,4 +1,4 @@
-import { Button, Card, CardContent } from '@mui/material'
+import { Button, Card, CardContent, TextField } from '@mui/material'
 import './ProductListItem.css'
 type Props = {
     title: string
@@ -7,7 +7,7 @@ type Props = {
     capacity: string
     price: number
     image: string
-   }
+}
 
 const ProductListItem = ({
     title,
@@ -15,9 +15,7 @@ const ProductListItem = ({
     capacity,
     price,
     type,
-    image
-    
-    
+    image,
 }: Props) => {
     return (
         <Card variant="outlined" className="product-list-item">
@@ -28,10 +26,18 @@ const ProductListItem = ({
                 <h3 className="product-title">{title}</h3>
                 <p className="product-description">{description}</p>
                 <div className="product-features">Type: {type}</div>
+                <div className="product-features">Type: {capacity}Gb</div>
                 <div className="product-capacity">{capacity}</div>
                 <div className="product-price">{price}</div>
                 <div className="btns-wrapper">
-                    <Button variant="outlined">Add to Card</Button>
+                    <div className="product-quantity">
+                        <Button variant="outlined">-</Button>
+                        <TextField size="small" value="1" />
+                        <Button variant="outlined">+</Button>
+                    </div>
+                    <div className="btns-wrapper">
+                        <Button variant="outlined">Add to Card</Button>
+                    </div>
                 </div>
             </CardContent>
         </Card>

@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, TextField } from '@mui/material'
 import './ProductListItem.css'
+import { useState } from 'react'
 type Props = {
     title: string
     description: string
@@ -17,6 +18,18 @@ const ProductListItem = ({
     type,
     image,
 }: Props) => {
+   
+   const [count, setCount] = useState<number>(2)
+  const [color, setColor] = useState<string>("green")
+  
+  const onIncrementClick = () => {setCount((prevCount) => prevCount + 1)}
+  
+   const onDecrementClick = ()=>{
+    setCount((prevCount)=>prevCount-1)
+}
+const toggleColorChange = () => {
+    setColor((prevCount) => (prevCount === "green" ? 'red' : 'green'))
+}
     return (
         <Card variant="outlined" className="product-list-item">
             <CardContent>
@@ -27,16 +40,26 @@ const ProductListItem = ({
                 <p className="product-description">{description}</p>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Type: {capacity}Gb</div>
+                <div>
+                    <div>
+                        Color: <span className={`${color}`}>{color}</span>
+                    </div>
+                    <button onClick={toggleColorChange}>Change color</button>
+                </div>
                 <div className="product-capacity">{capacity}</div>
                 <div className="product-price">{price}</div>
                 <div className="btns-wrapper">
                     <div className="product-quantity">
                         <Button variant="outlined">-</Button>
-                        <TextField size="small" value="1" />
-                        <Button variant="outlined">+</Button>
+                        <TextField size="small" value={count} />
+                        <Button variant="outlined" onClick={onDecrementClick}>
+                            +
+                        </Button>
                     </div>
                     <div className="btns-wrapper">
-                        <Button variant="outlined">Add to Card</Button>
+                        <Button variant="outlined" onClick={onIncrementClick}>
+                            Add to Card
+                        </Button>
                     </div>
                 </div>
             </CardContent>

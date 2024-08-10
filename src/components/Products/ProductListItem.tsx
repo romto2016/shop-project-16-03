@@ -19,7 +19,7 @@ const ProductListItem = ({
     image,
 }: Props) => {
     const [count, setCount] = useState<number>(2)
-    const [isDescriptionShow, setIsDescriptionShow] = useState<boolean>(false)
+    
 
     const onIncrementClick = () => {
         setCount((prevCount) => prevCount + 1)
@@ -28,9 +28,7 @@ const ProductListItem = ({
     const onDecrementClick = () => {
         setCount((prevCount) => prevCount - 1)
     }
-    const toggleDescription = () => {
-        setIsDescriptionShow((prevState) => !(prevState))
-    }
+    
     return (
         <Card variant="outlined" className="product-list-item">
             <CardContent>
@@ -41,20 +39,7 @@ const ProductListItem = ({
                 <p className="product-description">{description}</p>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Type: {capacity}Gb</div>
-                <div>
-                    <button onClick={toggleDescription}>
-                       {isDescriptionShow ? "Hide" : "Show"} description
-                    </button>
-                    {isDescriptionShow ? (
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Provident quaerat error pariatur culpa
-                            delectus, praesentium quisquam aut, sint expedita
-                            reiciendis modi odit inventore consectetur illum
-                            consequuntur aperiam esse deleniti maiores!
-                        </p>
-                    ) : null}
-                </div>
+                
                 <div className="product-capacity">{capacity}</div>
                 <div className="product-price">{price}</div>
                 <div className="btns-wrapper">

@@ -1,7 +1,7 @@
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 
-import { Container } from '@mui/material'
+import { CardHeader, Container } from '@mui/material'
 import Logo from "../components/Logo/Logo"
 import Menu from '../components/Menu/Menu'
 
@@ -18,6 +18,7 @@ const Header = (props: Props) => {
                 <Toolbar>
                    <Logo />
                    <Menu />
+                   <CardHeader />
                 </Toolbar>
             </Container>
         </AppBar>

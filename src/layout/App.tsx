@@ -4,13 +4,26 @@ import Main from './Main'
 import Footer from './Footer'
 import "styles/layout.css"
 import { StyledEngineProvider } from '@mui/material/styles'
+import { useState } from 'react'
 
+
+
+type CardDataType = {
+    totalCount: number
+    totalPrice: number
+}
 const App = () => {
-    return (
+
+    const [cardData,setCardData] = useState<CardDataType>({
+        totalCount: 0,
+        totalPrice: 0,
+    })
+    
+   return (
         <>
             <StyledEngineProvider injectFirst>
                 <CssBaseline />
-                <Header />
+                <Header cardData={cardData}/>
                 <Main />
                 <Footer />
             </StyledEngineProvider>

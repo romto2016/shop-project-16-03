@@ -19,11 +19,20 @@ const App = () => {
         totalPrice: 0,
     })
     
+const addProductToCard = (count: number, price: number) => {
+setCardData((prevState)=>({
+    totalCount: prevState.totalCount + count,
+    totalPrice: prevState.totalPrice + count *price,
+}))
+ }
+
+
    return (
         <>
             <StyledEngineProvider injectFirst>
                 <CssBaseline />
                 <Header cardData={cardData}/>
+                <button onClick={() => addProductToCard(5,1000)}> Add to card (5,1000$)</button>
                 <Main />
                 <Footer />
             </StyledEngineProvider>

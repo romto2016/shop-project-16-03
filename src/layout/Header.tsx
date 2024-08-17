@@ -13,6 +13,7 @@ type Props = {
         totalCount: number
         totalPrice: number
     }
+    
 }
 
 const Header = ({
@@ -24,7 +25,7 @@ const Header = ({
                 <Toolbar>
                    <Logo />
                    <Menu />
-                   <CardHeader cardData={cardData} />
+                   <CardHeader cardData={cardData}/>
                 </Toolbar>
             </Container>
         </AppBar>

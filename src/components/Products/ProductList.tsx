@@ -3,8 +3,8 @@ import ProductListItem from './ProductListItem'
 import { productsArray } from "utils/productsArray"
 
 
-type Props = {}
-const ProductList = (props: Props) => {
+type Props = { addProductToCart: (count: number, price: number) => void }
+const ProductList = ({addProductToCart}: Props) => {
     return (
         <>
             <Typography
@@ -19,7 +19,15 @@ const ProductList = (props: Props) => {
 
             <Grid container spacing={2}>
                 {productsArray.map(
-                    ({ id, title, type, description, capacity, price, image }) => (
+                    ({
+                        id,
+                        title,
+                        type,
+                        description,
+                        capacity,
+                        price,
+                        image,
+                    }) => (
                         <Grid item xs={12} sm={6} lg={4} key={id}>
                             <ProductListItem
                                 title={title}
@@ -28,6 +36,7 @@ const ProductList = (props: Props) => {
                                 capacity={capacity}
                                 price={price}
                                 image={image}
+                                addProductToCart={addProductToCart}
                             />
                         </Grid>
                     )

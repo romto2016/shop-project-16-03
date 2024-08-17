@@ -3,6 +3,7 @@ type Props = {
         totalCount: number
         totalPrice: number
     }
+  
 }
 
 const CardHeader = ({ cardData }: Props) => {
@@ -10,6 +11,7 @@ const CardHeader = ({ cardData }: Props) => {
         <div>
             <div>{cardData.totalCount}</div>
             <div>{cardData.totalPrice}$</div>
+            
         </div>
     )
 }

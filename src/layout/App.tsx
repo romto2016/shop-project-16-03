@@ -32,8 +32,8 @@ setCardData((prevState)=>({
             <StyledEngineProvider injectFirst>
                 <CssBaseline />
                 <Header cardData={cardData}/>
-                <button onClick={() => addProductToCard(5,1000)}> Add to card (5,1000$)</button>
-                <Main />
+                {/* <button> Add to card (5,1000$)</button> */}
+                <Main addProductToCart={addProductToCard}/>
                 <Footer />
             </StyledEngineProvider>
         </>

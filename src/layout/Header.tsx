@@ -9,23 +9,19 @@ import CardHeader from 'components/CardHeader/CardHeader'
 // import React from 'react'
 
 type Props = {
-    cardData: {
-        totalCount: number
-        totalPrice: number
+    productInCart: {
+        [id: number]: number
     }
-    
 }
 
-const Header = ({
-   cardData
-}:Props) => {
+const Header = ({ productInCart }: Props) => {
     return (
         <AppBar position="static" sx={{ backgroundColor: 'Green' }}>
             <Container>
                 <Toolbar>
-                   <Logo />
-                   <Menu />
-                   <CardHeader cardData={cardData}/>
+                    <Logo />
+                    <Menu />
+                    <CardHeader productInCart={productInCart} />
                 </Toolbar>
             </Container>
         </AppBar>

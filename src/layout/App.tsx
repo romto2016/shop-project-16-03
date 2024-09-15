@@ -8,36 +8,37 @@ import { useState } from 'react'
 
 
 
-type CardDataType = {
-    totalCount: number
-    totalPrice: number
+type ProductsInCartType = {
+    [id: number]: number
 }
 const App = () => {
 
-    const [cardData,setCardData] = useState<CardDataType>({
-        totalCount: 0,
-        totalPrice: 0,
+    const [productInCart, setProductsInCart]= useState<ProductsInCartType>({
+        1:5,
+        2:5,
+        3:2,
     })
     
-const addProductToCard = (count: number, price: number) => {
-setCardData((prevState)=>({
-    totalCount: prevState.totalCount + count,
-    totalPrice: prevState.totalPrice + count *price,
-}))
- }
+const addProductToCard = (id: number, count: number) => {
+    setProductsInCart((prevState) => ({
+       ...prevState,
+        [id]:(prevState[id]||0)+count,
+    }))
+}
+ 
 
 
    return (
-        <>
-            <StyledEngineProvider injectFirst>
-                <CssBaseline />
-                <Header cardData={cardData}/>
-                {/* <button> Add to card (5,1000$)</button> */}
-                <Main addProductToCart={addProductToCard}/>
-                <Footer />
-            </StyledEngineProvider>
-        </>
-    )
+       <>
+           <StyledEngineProvider injectFirst>
+               <CssBaseline />
+               <Header productInCart={productInCart} />
+               <button onClick={()=>addProductToCard(2,5)}> Add product to card (5,1000$)</button>
+               <Main addProductToCart={addProductToCard} />
+               <Footer />
+           </StyledEngineProvider>
+       </>
+   )
 }
 export default App
  

@@ -1,5 +1,5 @@
 
-type Product = {
+export type Product = {
     title: string
     description: string
     type: string
@@ -39,7 +39,7 @@ export const productsArray: Product[] = [
         image: "images/364834195.webp"
     },
     {
-        id:4,
+        id:41,
         title: 'iPhone 14 Pro',
         description: 'This is iPhone 14 Pro',
         type: 'phone',
@@ -48,7 +48,7 @@ export const productsArray: Product[] = [
         image: "images/364834211.webp"
     },
     {
-       id:5,
+       id:15,
         title: 'iPhone 12 Pro',
         description: 'This is iPhone 12 Pro',
         type: 'phone',
@@ -57,7 +57,7 @@ export const productsArray: Product[] = [
         image: "images/364834229.webp"
     },
     {
-        id:6,
+        id:26,
         title: 'iPhone 11',
         description: 'This is iPhone 11',
         type: 'phone',
@@ -66,3 +66,12 @@ export const productsArray: Product[] = [
         image: "images/364834252.webp"
     },
 ]
+
+export const getProductsObject = (array : Product[])=>
+    array.reduce(
+        (obj,product) => ({
+            ...obj,
+            [product.id]: product,
+        }),
+        {}
+    )

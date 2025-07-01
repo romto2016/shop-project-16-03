@@ -5,6 +5,8 @@ import Footer from './Footer'
 import 'styles/layout.css'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
+import { Route, Routes } from 'react-router'
+import Home from 'pages/Home/Home'
 
 type ProductsInCartType = {
     [id: number]: number
@@ -28,7 +30,13 @@ const App = () => {
             <StyledEngineProvider injectFirst>
                 <CssBaseline />
                 <Header productInCart={productInCart} />
-                 <Main addProductToCart={addProductToCard} />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={<Home addProductToCart={addProductToCard} />}
+                    />
+                </Routes>
+                
                 <Footer />
             </StyledEngineProvider>
         </>

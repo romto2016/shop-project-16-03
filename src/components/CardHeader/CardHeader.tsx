@@ -4,7 +4,7 @@ type Props = {
         [id: number]: number
     }
     productObject?: {
-[id:number]: Product
+[id:number]: Product 
     }
 }
 
